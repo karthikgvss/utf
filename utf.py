@@ -81,7 +81,7 @@ class InvalidPragmaError(Exception):
   pass
 
 
-global no_of_failed_tests = 0
+no_of_failed_tests = 0
 
 def main():
   """
