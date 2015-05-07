@@ -231,6 +231,7 @@ def main():
   # Test all files
   else: 
     test_all(valid_files, options.security_layers)
+  return 1;
 
 
 
