@@ -458,7 +458,7 @@ def testing_monitor(file_path, security_layers):
       print '[ FAIL ]'
 
     print_dashes()
-	no_of_failed_tests += 1
+    no_of_failed_tests += 1
     
     for key, value in report.items():
       print 'Standard', key, ':'
