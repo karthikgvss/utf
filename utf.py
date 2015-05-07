@@ -81,7 +81,7 @@ class InvalidPragmaError(Exception):
   pass
 
 
-
+global no_of_failed_tests = 0
 
 def main():
   """
@@ -231,7 +231,7 @@ def main():
   # Test all files
   else: 
     test_all(valid_files, options.security_layers)
-  exit(1)
+  exit(no_of_failed_tests)
 
 
 
@@ -450,7 +450,7 @@ def testing_monitor(file_path, security_layers):
   time_taken = str(end_time - start_time)[:5]
   if len(time_taken) < 5:
     time_taken = " "*(5-len(time_taken)) + time_taken
-
+  global no_of_failed_tests
   if report:
     if SHOW_TIME:
       print '[ FAIL ] [ %ss ]' % time_taken
@@ -458,6 +458,7 @@ def testing_monitor(file_path, security_layers):
       print '[ FAIL ]'
 
     print_dashes()
+	no_of_failed_tests += 1
     
     for key, value in report.items():
       print 'Standard', key, ':'
